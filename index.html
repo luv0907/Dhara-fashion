@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Dhara Women & Kids — Handpicked fashion for women and children. Visit our boutique at Banjara Hills, Hyderabad." />
+    <title>Dhara | Women & Kids Fashion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+
+    <!-- ═══ HEADER ═══ -->
+    <header class="header" id="siteHeader">
+      <!-- ═══ ANNOUNCEMENT ═══ -->
+      <div class="announcement" id="announcementBar">
+        <span>✨ New arrivals are live — Free boutique packing on all prepaid orders</span>
+        <button class="announcement-close" id="closeAnnouncement" aria-label="Close">&times;</button>
+      </div>
+
+      <div class="header-inner">
+        <a class="logo" href="#home">
+          <img class="logo-img" src="./assets/lotus-logo.jpg" alt="Dhara logo" />
+          <div class="logo-text">
+            <span class="logo-name">Dhara</span>
+            <span class="logo-sub">Women & Kids</span>
+          </div>
+        </a>
+
+        <nav class="nav" id="mainNav">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#collections" class="nav-link">Shop</a>
+          <a href="#instagram" class="nav-link">Gallery</a>
+          <a href="#location" class="nav-link">Visit</a>
+        </nav>
+
+        <div class="header-right">
+          <a href="https://instagram.com/dhara_kids" target="_blank" rel="noreferrer" class="header-icon" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="tel:+919908555516" class="header-icon" aria-label="Call us">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </a>
+          <button class="cart-btn" type="button" id="openCart">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            <span class="cart-badge" id="cartCount">0</span>
+          </button>
+          <button class="menu-btn" type="button" id="menuToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ═══ HERO ═══ -->
+      <section class="hero" id="home">
+        <div class="hero-bg">
+          <img src="./assets/hero-banner.jpg" alt="Dhara boutique" />
+          <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+          <img class="hero-lotus" src="./assets/lotus-logo.jpg" alt="" />
+          <p class="hero-eyebrow">Banjara Hills, Hyderabad</p>
+          <h1 class="hero-title">Dhara</h1>
+          <p class="hero-subtitle" id="heroTagline">Women & Kids Fashion</p>
+          <p class="hero-desc">Handpicked ethnic wear, kids frocks, contemporary dresses & more — curated with love.</p>
+          <div class="hero-btns">
+            <a href="#collections" class="btn btn-primary btn-lg">Shop Now</a>
+            <a href="#location" class="btn btn-outline btn-lg">Visit Boutique</a>
+          </div>
+        </div>
+        <div class="hero-scroll">
+          <span>Scroll</span>
+          <div class="scroll-line"></div>
+        </div>
+      </section>
+
+      <!-- ═══ MARQUEE ═══ -->
+      <div class="marquee">
+        <div class="marquee-track">
+          <span>Kids Frocks</span><span>·</span>
+          <span>Ethnic Kurtas</span><span>·</span>
+          <span>Sarees</span><span>·</span>
+          <span>Contemporary Dresses</span><span>·</span>
+          <span>Bandhani Skirts</span><span>·</span>
+          <span>Lehengas</span><span>·</span>
+          <span>Accessories</span><span>·</span>
+          <span>Kids Frocks</span><span>·</span>
+          <span>Ethnic Kurtas</span><span>·</span>
+          <span>Sarees</span><span>·</span>
+          <span>Contemporary Dresses</span><span>·</span>
+          <span>Bandhani Skirts</span><span>·</span>
+          <span>Lehengas</span><span>·</span>
+          <span>Accessories</span><span>·</span>
+        </div>
+      </div>
+
+      <!-- ═══ FEATURED CATEGORIES ═══ -->
+      <section class="categories-section" id="categoriesSection">
+        <div class="container">
+          <div class="section-head">
+            <span class="tag">Browse by Category</span>
+            <h2 class="section-title">Our Collections</h2>
+          </div>
+          <div class="categories-grid">
+            <button type="button" class="cat-card" data-category-shortcut="Kids">
+              <img src="./assets/products/kids-pink-frock.jpg" alt="Kids wear" loading="lazy" />
+              <div class="cat-info"><span>Kids Wear</span></div>
+            </button>
+            <button type="button" class="cat-card" data-category-shortcut="Ethnic">
+              <img src="./assets/products/black-bandhani-skirt.jpg" alt="Ethnic wear" loading="lazy" />
+              <div class="cat-info"><span>Ethnic Wear</span></div>
+            </button>
+            <button type="button" class="cat-card" data-category-shortcut="Dresses">
+              <img src="./assets/products/sage-lace-dress.png" alt="Dresses" loading="lazy" />
+              <div class="cat-info"><span>Dresses</span></div>
+            </button>
+            <button type="button" class="cat-card" data-category-shortcut="Casual">
+              <img src="./assets/products/lime-embroidered-kurta.png" alt="Casual" loading="lazy" />
+              <div class="cat-info"><span>Casual</span></div>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ SHOP ═══ -->
+      <section class="shop-section" id="collections">
+        <div class="container">
+          <div class="section-head">
+            <span class="tag">Handpicked Styles</span>
+            <h2 class="section-title">Shop Dhara</h2>
+            <p class="section-desc">Browse our curated collection of kids & women's fashion</p>
+          </div>
+
+          <div class="shop-controls">
+            <div class="filter-bar">
+              <input id="searchInput" type="search" placeholder="Search styles..." class="filter-input" />
+              <select id="categoryFilter" class="filter-select"></select>
+              <select id="sizeFilter" class="filter-select">
+                <option value="All">All Sizes</option>
+                <option value="XS">XS</option><option value="S">S</option>
+                <option value="M">M</option><option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="1-2Y">1-2Y</option><option value="3-4Y">3-4Y</option>
+                <option value="5-6Y">5-6Y</option><option value="7-8Y">7-8Y</option>
+              </select>
+              <select id="sortFilter" class="filter-select">
+                <option value="featured">Featured</option>
+                <option value="price-low">Price: Low → High</option>
+                <option value="price-high">Price: High → Low</option>
+                <option value="stock">In Stock</option>
+              </select>
+            </div>
+            <div class="filter-meta">
+              <strong id="visibleCount">0</strong> <span>styles</span>
+              <button class="btn btn-ghost btn-sm" type="button" id="clearFilters">Clear All</button>
+            </div>
+          </div>
+
+          <div class="product-grid" id="productGrid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <!-- ═══ WHY DHARA ═══ -->
+      <section class="features-section">
+        <div class="container">
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-num">01</div>
+              <h3>Handpicked Fashion</h3>
+              <p>Every piece is personally curated for quality, comfort, and charm.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-num">02</div>
+              <h3>Women & Kids</h3>
+              <p>From kids' frocks to women's kurtas, skirts, and contemporary dresses.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-num">03</div>
+              <h3>Boutique Experience</h3>
+              <p>Visit us at Banjara Hills for personal styling and exclusive pieces.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ INSTAGRAM ═══ -->
+      <section class="insta-section" id="instagram">
+        <div class="container">
+          <div class="section-head center">
+            <span class="tag">Follow Our Story</span>
+            <h2 class="section-title">@dhara_kids</h2>
+            <p class="section-desc">Sneak peeks, new drops, and behind-the-scenes</p>
+          </div>
+          <div class="insta-grid">
+            <a href="https://instagram.com/dhara_kids" target="_blank" rel="noreferrer" class="insta-item">
+              <img src="./assets/dhara-store-display.jpg" alt="Store" loading="lazy" />
+            </a>
+            <a href="https://instagram.com/dhara_kids" target="_blank" rel="noreferrer" class="insta-item">
+              <img src="./assets/products/kids-pink-frock.jpg" alt="Kids" loading="lazy" />
+            </a>
+            <a href="https://instagram.com/dhara_kids" target="_blank" rel="noreferrer" class="insta-item">
+              <img src="./assets/products/sage-lace-dress.png" alt="Dress" loading="lazy" />
+            </a>
+            <a href="https://instagram.com/dhara_kids" target="_blank" rel="noreferrer" class="insta-item">
+              <img src="./assets/products/black-bandhani-skirt.jpg" alt="Ethnic" loading="lazy" />
+            </a>
+            <a href="https://instagram.com/dhara_kids" target="_blank" rel="noreferrer" class="insta-item">
+              <img src="./assets/products/lime-embroidered-kurta.png" alt="Kurta" loading="lazy" />
+            </a>
+            <a href="https://instagram.com/dhara_kids" target="_blank" rel="noreferrer" class="insta-item">
+              <img src="./assets/hero-banner.jpg" alt="Boutique" loading="lazy" />
+            </a>
+          </div>
+          <div class="insta-cta">
+            <a href="https://instagram.com/dhara_kids" target="_blank" rel="noreferrer" class="btn btn-outline">Follow on Instagram</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ LOCATION ═══ -->
+      <section class="location-section" id="location">
+        <div class="container">
+          <div class="section-head">
+            <span class="tag">Visit Us</span>
+            <h2 class="section-title">Our Boutique</h2>
+            <p class="section-desc" id="locationIntro">Experience Dhara in person at Banjara Hills, Hyderabad</p>
+          </div>
+          <div class="location-grid">
+            <div class="map-frame">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.0!2d78.44!3d17.42!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sSai+Enclave+Road+No+12+Banjara+Hills+Hyderabad!5e0!3m2!1sen!2sin!4v1"
+                width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
+                title="Dhara location"></iframe>
+            </div>
+            <div class="location-info">
+              <div class="loc-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <div>
+                  <span class="loc-label">Address</span>
+                  <strong id="storeAddress">Plot No: 28, Sai Enclave, Road No: 12, Banjara Hills, Hyderabad - 500034</strong>
+                </div>
+              </div>
+              <div class="loc-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <div>
+                  <span class="loc-label">Hours</span>
+                  <strong id="storeHours">Mon–Sat, 10:30 AM – 8:30 PM</strong>
+                </div>
+              </div>
+              <div class="loc-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                <div>
+                  <span class="loc-label">Contact</span>
+                  <strong id="storeContact"><a href="tel:+919908555516">+91 9908 5555 16</a> · <a href="tel:+917680898015">+91 7680 898 015</a></strong>
+                </div>
+              </div>
+              <div class="loc-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+                <div>
+                  <span class="loc-label">Instagram</span>
+                  <strong><a href="https://instagram.com/dhara_kids" target="_blank" rel="noreferrer">@dhara_kids</a></strong>
+                </div>
+              </div>
+              <a class="btn btn-primary btn-lg" id="mapLink" href="https://maps.app.goo.gl/JzBjWzgThxvXL9Wu8" target="_blank" rel="noreferrer">Get Directions</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+    </main>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img src="./assets/lotus-logo.jpg" alt="Dhara" class="footer-logo" />
+            <span class="footer-name">Dhara</span>
+            <span class="footer-tagline">Women & Kids Fashion</span>
+            <p class="footer-desc">Handpicked fashion from Banjara Hills, Hyderabad. Ethnic wear, kids frocks, contemporary dresses and more.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <a href="#home">Home</a>
+            <a href="#collections">Shop</a>
+            <a href="#instagram">Gallery</a>
+            <a href="#location">Visit Us</a>
+          </div>
+          <div class="footer-col">
+            <h4>Categories</h4>
+            <a href="#collections" data-category-shortcut="Kids">Kids Wear</a>
+            <a href="#collections" data-category-shortcut="Ethnic">Ethnic Wear</a>
+            <a href="#collections" data-category-shortcut="Dresses">Dresses</a>
+            <a href="#collections" data-category-shortcut="Casual">Casual</a>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <a href="tel:+919908555516">+91 9908 5555 16</a>
+            <a href="tel:+917680898015">+91 7680 898 015</a>
+            <a href="https://instagram.com/dhara_kids" target="_blank" rel="noreferrer">@dhara_kids</a>
+            <span>Plot No: 28, Sai Enclave<br/>Road No: 12, Banjara Hills<br/>Hyderabad - 500034</span>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2024 Dhara Women & Kids. All rights reserved.</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ═══ CART DRAWER ═══ -->
+    <div class="overlay" id="drawerBackdrop" hidden></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+      <div class="drawer-head">
+        <div>
+          <span class="tag">Shopping</span>
+          <h2>Your Cart</h2>
+        </div>
+        <button class="close-btn" type="button" id="closeCart">&times;</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-footer">
+        <div class="total-row"><span>Subtotal</span><strong id="cartSubtotal">₹0</strong></div>
+        <div class="total-row"><span>Shipping</span><strong id="cartShipping">₹0</strong></div>
+        <div class="total-row total-grand"><span>Total</span><strong id="cartTotal">₹0</strong></div>
+        <button class="btn btn-primary btn-lg full-w" type="button" id="checkoutButton">Checkout</button>
+      </div>
+    </aside>
+
+    <!-- ═══ CHECKOUT DIALOG ═══ -->
+    <dialog class="checkout-dialog" id="checkoutDialog">
+      <form method="dialog" class="checkout-form" id="checkoutForm">
+        <div class="dialog-head">
+          <div><span class="tag">Secure Payment</span><h2>Complete Order</h2></div>
+          <button class="close-btn" type="button" id="closeCheckout">&times;</button>
+        </div>
+        <div class="checkout-body">
+          <div class="checkout-fields">
+            <label><span>Full Name</span><input name="name" autocomplete="name" required /></label>
+            <label><span>Email</span><input name="email" type="email" autocomplete="email" required /></label>
+            <label><span>Phone</span><input name="phone" autocomplete="tel" required /></label>
+            <label class="full-w"><span>Delivery Address</span><textarea name="address" rows="3" required></textarea></label>
+            <div class="field-row">
+              <label><span>City</span><input name="city" required /></label>
+              <label><span>PIN Code</span><input name="pin" inputmode="numeric" required /></label>
+            </div>
+            <fieldset class="pay-methods">
+              <legend>Payment</legend>
+              <label class="pay-opt"><input type="radio" name="payment" value="qr" checked /> <span>UPI / QR</span></label>
+              <label class="pay-opt"><input type="radio" name="payment" value="cod" /> <span>Cash on Delivery</span></label>
+            </fieldset>
+            <div class="payment-box" data-payment-box="qr">
+              <div class="qr-payment">
+                <p class="qr-note">Scan the QR code below to pay. After payment, click "Place Order".</p>
+                <div class="qr-placeholder" id="qrCodeArea">
+                  <p>QR code will appear here once owner uploads it via Admin panel.</p>
+                </div>
+              </div>
+            </div>
+            <div class="payment-box" data-payment-box="cod" hidden>
+              <p class="qr-note">Pay cash when your order is delivered or when you pick it up from the store.</p>
+            </div>
+            <p class="form-error" id="checkoutError" role="alert"></p>
+          </div>
+          <div class="checkout-summary" id="checkoutSummary"></div>
+        </div>
+        <div class="dialog-foot">
+          <button class="btn btn-ghost" type="button" id="cancelCheckout">Cancel</button>
+          <button class="btn btn-primary" type="submit">Place Order</button>
+        </div>
+      </form>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>

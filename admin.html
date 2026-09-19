@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dhara Boutique | Owner Console</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./admin.css" />
+  </head>
+  <body>
+    <!-- ═══ AUTH MODAL / GATE ═══ -->
+    <div class="auth-gate" id="authGate">
+      <div class="auth-card">
+        <div class="auth-header">
+          <img src="./assets/lotus-logo.jpg" alt="Dhara" class="auth-logo" />
+          <h1>Owner Console</h1>
+          <p>Dhara Women & Kids Fashion Boutique</p>
+        </div>
+        <form class="auth-form" id="loginForm">
+          <div class="form-group">
+            <label for="adminPass">Admin Password</label>
+            <input type="password" id="adminPass" name="password" placeholder="Enter admin password" required autofocus autocomplete="current-password" />
+          </div>
+          <p class="auth-error" id="loginError" role="alert"></p>
+          <button class="btn btn-primary full-w" type="submit">Sign In to Console</button>
+          <div class="auth-footer">
+            <span class="auth-hint">Default password: <code>dhara-admin</code></span>
+            <a href="./index.html" class="auth-back">← Back to Storefront</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ═══ MAIN ADMIN APP ═══ -->
+    <div class="admin-app" id="adminApp" style="display: none;">
+      <!-- TOP NAV -->
+      <header class="admin-header">
+        <div class="admin-header-left">
+          <img src="./assets/lotus-logo.jpg" alt="Dhara" class="admin-brand-logo" />
+          <div class="admin-brand-info">
+            <span class="admin-brand-title">Dhara Console</span>
+            <span class="admin-brand-sub" id="adminStoreTitle">Women & Kids Boutique</span>
+          </div>
+        </div>
+
+        <div class="admin-header-right">
+          <a href="./index.html" target="_blank" rel="noreferrer" class="btn btn-outline btn-sm">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            View Live Store
+          </a>
+          <button class="btn btn-ghost btn-sm" id="logoutBtn" type="button">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            Logout
+          </button>
+        </div>
+      </header>
+
+      <div class="admin-body">
+        <!-- SIDEBAR -->
+        <aside class="admin-sidebar">
+          <nav class="sidebar-nav">
+            <button class="nav-tab active" data-tab="dashboard">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              <span>Dashboard</span>
+            </button>
+            <button class="nav-tab" data-tab="orders">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+              <span>Orders</span>
+              <span class="tab-badge" id="pendingOrdersBadge" style="display:none;">0</span>
+            </button>
+            <button class="nav-tab" data-tab="products">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+              <span>Products</span>
+            </button>
+            <button class="nav-tab" data-tab="payment">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+              <span>UPI & QR Code</span>
+            </button>
+            <button class="nav-tab" data-tab="settings">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+              <span>Store Settings</span>
+            </button>
+            <button class="nav-tab" data-tab="backup">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>Backup & Data</span>
+            </button>
+          </nav>
+        </aside>
+
+        <!-- CONTENT VIEWS -->
+        <main class="admin-content">
+          <!-- TAB: DASHBOARD -->
+          <section class="tab-pane active" id="pane-dashboard">
+            <div class="pane-header">
+              <div>
+                <h2>Overview & Performance</h2>
+                <p>Real-time analytics for your boutique storefront</p>
+              </div>
+            </div>
+
+            <div class="stats-grid">
+              <div class="stat-card">
+                <span class="stat-label">Total Revenue</span>
+                <span class="stat-value" id="kpiRevenue">₹0</span>
+                <span class="stat-sub">From confirmed orders</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-label">Total Orders</span>
+                <span class="stat-value" id="kpiOrders">0</span>
+                <span class="stat-sub" id="kpiOrdersSub">0 pending</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-label">Active Products</span>
+                <span class="stat-value" id="kpiProducts">0</span>
+                <span class="stat-sub" id="kpiCategories">0 categories</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-label">Store Status</span>
+                <span class="stat-value text-success">Live</span>
+                <span class="stat-sub">Banjara Hills, Hyd</span>
+              </div>
+            </div>
+
+            <div class="dash-split">
+              <div class="panel">
+                <div class="panel-head">
+                  <h3>Recent Customer Orders</h3>
+                  <button class="btn btn-ghost btn-sm" id="btnViewAllOrders">View All</button>
+                </div>
+                <div id="recentOrdersArea"></div>
+              </div>
+
+              <div class="panel">
+                <div class="panel-head">
+                  <h3>Quick Store Snapshot</h3>
+                </div>
+                <div class="quick-summary" id="quickStoreSummary"></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- TAB: ORDERS -->
+          <section class="tab-pane" id="pane-orders">
+            <div class="pane-header">
+              <div>
+                <h2>Customer Orders</h2>
+                <p>Manage customer shipments, fulfillment status and payments</p>
+              </div>
+              <div class="pane-actions">
+                <select id="orderStatusFilter" class="admin-select">
+                  <option value="All">All Statuses</option>
+                  <option value="Processing">Processing</option>
+                  <option value="Packed">Packed</option>
+                  <option value="Shipped">Shipped</option>
+                  <option value="Ready for Pickup">Ready for Pickup</option>
+                  <option value="Delivered">Delivered</option>
+                  <option value="Cancelled">Cancelled</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="table-wrap">
+                <div id="ordersTableArea"></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- TAB: PRODUCTS -->
+          <section class="tab-pane" id="pane-products">
+            <div class="pane-header">
+              <div>
+                <h2>Products & Inventory</h2>
+                <p>Add new arrivals, update prices, stock and product details</p>
+              </div>
+              <button class="btn btn-primary" id="toggleAddProduct">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Add New Product
+              </button>
+            </div>
+
+            <!-- ADD PRODUCT CARD -->
+            <div class="panel add-box" id="addProductBox" style="display:none;">
+              <div class="panel-head">
+                <h3>Add New Boutique Item</h3>
+                <button class="btn btn-ghost btn-sm" id="closeAddProduct">&times; Cancel</button>
+              </div>
+              <form id="newProductForm" class="product-form-grid">
+                <div class="form-group">
+                  <label>Product Name *</label>
+                  <input name="name" placeholder="e.g. Zari Silk Lehenga Set" required />
+                </div>
+                <div class="form-group">
+                  <label>Category *</label>
+                  <input name="category" placeholder="Kids, Ethnic, Dresses, Casual" required />
+                </div>
+                <div class="form-group">
+                  <label>Price (₹) *</label>
+                  <input name="price" type="number" min="0" placeholder="2990" required />
+                </div>
+                <div class="form-group">
+                  <label>Stock Quantity *</label>
+                  <input name="stock" type="number" min="0" placeholder="10" required />
+                </div>
+                <div class="form-group">
+                  <label>Badge / Tag</label>
+                  <input name="badge" placeholder="New, Best Seller, Limited" />
+                </div>
+                <div class="form-group full-span">
+                  <label>Clothing Photo * (Upload from Device or enter URL)</label>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;align-items:start;">
+                    <div>
+                      <input type="file" id="newProductImageFile" accept="image/*" class="file-input" style="margin-bottom:0.4rem;width:100%;" />
+                      <span class="field-hint">Upload photo from phone or computer</span>
+                    </div>
+                    <div>
+                      <input name="image" id="newProductImageUrl" placeholder="./assets/products/rose-midi-dress.png or URL" style="width:100%;" />
+                      <span class="field-hint">Or paste an existing image URL</span>
+                    </div>
+                  </div>
+                  <div id="newProductPhotoPreview" style="margin-top:0.6rem;display:none;">
+                    <img src="" alt="Preview" style="height:90px;width:75px;object-fit:cover;border:1px solid var(--border);" />
+                  </div>
+                </div>
+                <div class="form-group full-span">
+                  <label>Description *</label>
+                  <textarea name="description" rows="2" placeholder="Handcrafted with pure fabrics..." required></textarea>
+                </div>
+                <div class="form-group">
+                  <label>Sizes (comma separated)</label>
+                  <input name="sizes" placeholder="S, M, L, XL or 2-3Y, 4-5Y" required />
+                </div>
+                <div class="form-group">
+                  <label>Colors (comma separated)</label>
+                  <input name="colors" placeholder="Pink, Peach, Rose" required />
+                </div>
+                <div class="form-group full-span form-actions">
+                  <button class="btn btn-primary" type="submit">Save Product</button>
+                </div>
+              </form>
+            </div>
+
+            <!-- PRODUCT LIST -->
+            <div class="panel">
+              <div class="panel-filters">
+                <input type="search" id="productSearch" class="admin-input" placeholder="Search by name or category..." />
+                <select id="productCategorySelect" class="admin-select">
+                  <option value="All">All Categories</option>
+                </select>
+              </div>
+              <div class="table-wrap">
+                <div id="productsTableArea"></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- TAB: UPI & QR CODE -->
+          <section class="tab-pane" id="pane-payment">
+            <div class="pane-header">
+              <div>
+                <h2>UPI & QR Code Payment</h2>
+                <p>Upload your boutique's QR code and set your UPI ID so customers can pay directly</p>
+              </div>
+            </div>
+
+            <div class="grid-2col">
+              <div class="panel">
+                <div class="panel-head">
+                  <h3>Payment Configuration</h3>
+                </div>
+                <form id="paymentConfigForm" class="settings-form">
+                  <div class="form-group">
+                    <label>Payee Name</label>
+                    <input name="payeeName" id="inputPayeeName" placeholder="e.g. BOUROJU AKSHAY" />
+                  </div>
+                  <div class="form-group">
+                    <label>UPI / PhonePe Mobile Number</label>
+                    <input name="paymentPhone" id="inputPaymentPhone" placeholder="e.g. 9959266301" />
+                  </div>
+                  <div class="form-group">
+                    <label>UPI ID (VPA)</label>
+                    <input name="paymentUpi" id="inputUpi" placeholder="e.g. 9959266301@ybl or dhara@icici" />
+                    <span class="field-hint">Customers will see this ID during checkout</span>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Upload QR Code from Device (Phone/PC)</label>
+                    <input type="file" id="qrFileInput" accept="image/*" class="file-input" />
+                    <span class="field-hint">Upload JPG/PNG of your PhonePe/GPay QR code</span>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Or QR Code Image URL</label>
+                    <input name="qrImage" id="inputQrImage" placeholder="Paste image link or use upload above" />
+                  </div>
+
+                  <button class="btn btn-primary" type="submit">Save & Publish to Live Store</button>
+                </form>
+              </div>
+
+              <div class="panel">
+                <div class="panel-head">
+                  <h3>Customer Checkout Preview</h3>
+                </div>
+                <div class="qr-preview-card">
+                  <p class="qr-preview-title">How customers will see your payment during checkout:</p>
+                  <div class="qr-box-preview" id="qrPreviewArea">
+                    <p class="empty-note">No QR code uploaded yet. Enter URL or upload image above.</p>
+                  </div>
+                  <div class="upi-preview-info">
+                    <span>UPI ID: <strong id="previewUpiText">Not set</strong></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- TAB: SETTINGS -->
+          <section class="tab-pane" id="pane-settings">
+            <div class="pane-header">
+              <div>
+                <h2>Store Information & Settings</h2>
+                <p>Manage store name, address, contact details and announcements</p>
+              </div>
+            </div>
+
+            <div class="panel">
+              <form id="storeSettingsForm" class="settings-grid">
+                <div class="form-group">
+                  <label>Boutique Name</label>
+                  <input name="name" id="set_name" required />
+                </div>
+                <div class="form-group">
+                  <label>Tagline</label>
+                  <input name="tagline" id="set_tagline" required />
+                </div>
+                <div class="form-group full-span">
+                  <label>Announcement Bar Banner</label>
+                  <input name="announcement" id="set_announcement" required />
+                  <span class="field-hint">Shown at the very top of the website</span>
+                </div>
+                <div class="form-group">
+                  <label>Primary Phone</label>
+                  <input name="phone" id="set_phone" required />
+                </div>
+                <div class="form-group">
+                  <label>Secondary Phone</label>
+                  <input name="phone2" id="set_phone2" />
+                </div>
+                <div class="form-group">
+                  <label>Email Address</label>
+                  <input name="email" id="set_email" type="email" required />
+                </div>
+                <div class="form-group">
+                  <label>Working Hours</label>
+                  <input name="hours" id="set_hours" required />
+                </div>
+                <div class="form-group full-span">
+                  <label>Boutique Physical Address</label>
+                  <textarea name="address" id="set_address" rows="2" required></textarea>
+                </div>
+                <div class="form-group full-span">
+                  <label>Google Maps Directions Link</label>
+                  <input name="mapLink" id="set_mapLink" />
+                </div>
+                <div class="form-group">
+                  <label>Admin Login Password</label>
+                  <input name="adminPassword" id="set_adminPassword" type="password" required />
+                  <span class="field-hint">Change the password to protect your admin portal</span>
+                </div>
+                <div class="form-group full-span form-actions">
+                  <button class="btn btn-primary btn-lg" type="submit">Save Store Settings</button>
+                </div>
+              </form>
+            </div>
+          </section>
+
+          <!-- TAB: BACKUP & DATA -->
+          <section class="tab-pane" id="pane-backup">
+            <div class="pane-header">
+              <div>
+                <h2>Backup & Data Management</h2>
+                <p>Export your full store database or restore from a backup file</p>
+              </div>
+            </div>
+
+            <div class="backup-grid">
+              <div class="panel">
+                <h3>Export Store Data</h3>
+                <p class="backup-desc">Download a complete backup JSON containing all products, customer orders, and store settings.</p>
+                <button class="btn btn-primary" id="btnExportData" type="button">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  Export dhara-data.json
+                </button>
+              </div>
+
+              <div class="panel">
+                <h3>Restore from JSON</h3>
+                <p class="backup-desc">Upload a previously exported <code>dhara-data.json</code> file to restore catalog and orders.</p>
+                <input type="file" id="importFileInput" accept=".json" class="file-input" />
+              </div>
+
+              <div class="panel danger-panel full-span">
+                <h3>Reset to Factory Catalog</h3>
+                <p class="backup-desc">Reset all products and settings to default demo values. Use with caution.</p>
+                <button class="btn btn-outline-danger" id="btnResetStore" type="button">Reset All Data</button>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div class="admin-toast" id="adminToast" role="status" aria-live="polite"></div>
+
+    <script src="./admin.js"></script>
+  </body>
+</html>

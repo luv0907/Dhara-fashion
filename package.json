@@ -1,0 +1,9 @@
+{
+  "name": "dhara-fashion",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dhara fashion ecommerce storefront with cart, checkout, payment simulation, location, and admin panel.",
+  "scripts": {
+    "start": "python3 -m http.server 5177"
+  }
+}
