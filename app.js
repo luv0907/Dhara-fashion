@@ -12,7 +12,7 @@ const STORAGE = {
 
 const DEFAULT_STORE = {
   name: "Dhara",
-  announcement: "✨ New arrivals are live — Free boutique packing on all prepaid orders",
+  announcement: "✨ Live Demo Storefront for Textile & Fashion Industries · Boutique E-Commerce System",
   tagline: "Women & Kids Fashion",
   description: "Handpicked ethnic wear, kids frocks, contemporary dresses & more — curated with love.",
   address: "Plot No: 28, Sai Enclave, Road No: 12, Banjara Hills, Hyderabad - 500034",
