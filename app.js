@@ -159,6 +159,7 @@ ids.forEach(id => { el[id] = $(`#${id}`); });
 
 // ─── INIT ──────────────────────────────────
 window.addEventListener("DOMContentLoaded", () => {
+  setupBrandIntro();
   renderStore();
   renderCategories();
   renderProducts();
@@ -166,6 +167,34 @@ window.addEventListener("DOMContentLoaded", () => {
   bindEvents();
   setupReveals();
 });
+
+function setupBrandIntro() {
+  const intro = document.getElementById("brandIntro");
+  const skip = document.getElementById("introSkip");
+  if (!intro) return;
+
+  function dismiss() {
+    intro.classList.add("dismissed");
+    setTimeout(() => {
+      intro.style.display = "none";
+    }, 850);
+  }
+
+  // Auto-dismiss smoothly after 2.4 seconds
+  const timer = setTimeout(dismiss, 2400);
+
+  // Click anywhere to unveil immediately
+  intro.addEventListener("click", () => {
+    clearTimeout(timer);
+    dismiss();
+  });
+
+  skip?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    clearTimeout(timer);
+    dismiss();
+  });
+}
 
 // ─── HELPERS ───────────────────────────────
 function load(k, fb) { try { const r = localStorage.getItem(k); return r ? JSON.parse(r) : clone(fb); } catch { return clone(fb); } }
